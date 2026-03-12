@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujarat Tour & Travels</title>
+    <link rel="stylesheet" href="code2.css">
+</head>
+
+<body>
+    <script src="code3.js"></script>
+
+    <!-- Header Section -->
+<header>
+    <div class="container" style="display: flex; align-items: center;">
+        <img src="C:\Users\aayus\OneDrive\Pictures\web-logo.jpg" width="150" height="auto" alt="Tour Logo" class="logo" style="margin-right: 15px;">
+        <div style="text-align: center; flex-grow: 1;">
+            <h1 style="margin: 0;">Gujarat Tour & Travels</h1>
+            <p style="margin: 5px 0;">📞 Call Us: +91 99131 23792</p>
+        </div>
+    </div>
+</header>
+
+    <!-- Navigation -->
+    <nav>
+    <ul>
+    <li><a href="#" onclick="openModal('about-modal')">About Us</a></li>
+    <li><a href="#" onclick="openModal('packages-modal')">Packages🎒</a></li>
+    <li><a href="#faq">FAQ❓</a></li>
+    <li><a href="#contact">Contact Us📞</a></li>
+    </ul>
+    </nav>
+
+    <!-- Search & Booking Section -->
+<section class="search-bar">
+    <input type="text" placeholder="Search for places..." oninput="searchPlaces()" style="width: 300px; height: 40px; font-size: 16px;">
+    <button onclick="searchPlaces()" style="height: 40px; font-size: 16px;">🔍 Search</button>
+</section>
+<!-- Inquiry Button -->
+<div class="center">
+    <button class="inquiry-form" onclick="openInquiryForm()" style="font-size: 20px;">📩 Inquiry</button>
+</div>
+
+<!-- Inquiry Form (Popup) -->
+<div id="inquiry-form" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeInquiryForm()">&times;</span>
+        <h2>Inquiry Form</h2>
+        <form id="inquiryForm" onsubmit="handleFormSubmit(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function openInquiryForm() {
+        document.getElementById('inquiry-form').style.display = 'block';
+    }
+
+    function closeInquiryForm() {
+        document.getElementById('inquiry-form').style.display = 'none';
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Collect form data
+        const formData = new FormData(event.target);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log('Form submitted:', data); // Log the form data for demonstration
+
+        // Optionally, close the form after submission
+        closeInquiryForm();
+    }
+</script>
+    
+    <!-- Special Places Section -->
+<div class="tour-card">
+    <img src="C:\Users\aayus\OneDrive\Pictures\dwarka.jpg" alt="Dwarka Tour">
+    <div class="tour-details">
+        <h3>Dwarka Tour</h3>
+        <p style="font-size: 18px;"><strong>Duration:</strong> 3 Nights / 4 Days</p>
+    </div>
+    <div class="tour-info">
+        <p style="font-size: 20px;"><strong>From ₹3,400</strong><br>Per Person</p>
+        <button class="btn" onclick="viewDetails('Dwarka Tour')" style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+        <button class="btn" onclick="bookingRequest('Dwarka Tour')" style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+    </div>
+          </div>
+      </div>
+
+      <div class="tour-card">
+        <img src="C:\Users\aayus\OneDrive\Pictures\Somanath.jpg" alt="Somnath Temple">
+        <div class="tour-details">
+          <h3>Temple Somnath</h3>
+          <p style="font-size: 18px;"><strong>Duration:</strong> 4 Nights / 5 Days</p>
+        </div>
+        <div class="tour-info">
+          <p style="font-size: 20px;"><strong>From ₹3,900</strong><br>Per Person</p>
+          <button class="btn" onclick="viewDetails('Temple Somnath')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+          <button class="btn" onclick="bookingRequest('Temple Somnath')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+      </div>
+      </div>
+
+      <div class="tour-card">
+        <img src="C:\Users\aayus\OneDrive\Pictures\gir.jpeg" alt="Gir National Park">
+        <div class="tour-details">
+          <h3>Sasan Gir Tour</h3>
+          <p style="font-size: 18px;"><strong>Duration:</strong> 5 Nights / 6 Days</p>
+        </div>
+        <div class="tour-info">
+          <p style="font-size: 20px;"><strong>From ₹4,200</strong><br>Per Person</p>
+          <button class="btn" onclick="viewDetails('gir national park')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+          <button class="btn" onclick="bookingRequest('gir national park')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+      </div>
+      </div>
+
+      <div class="tour-card">
+        <img src="C:\Users\aayus\OneDrive\Pictures\mandavi.jpeg" alt="Mandvi Beach">
+        <div class="tour-details">
+          <h3>Mandvi Beach </h3>
+          <p style="font-size: 18px;"><strong>Duration:</strong> 3 Nights / 4 Days</p>
+        </div>
+        <div class="tour-info">
+          <p style="font-size: 20px;"><strong>From ₹3,100</strong><br>Per Person</p>
+          <button class="btn" onclick="viewDetails('Mandvi')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+          <button class="btn" onclick="bookingRequest('Mandvi')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+      </div>
+      </div>
+
+      <div class="tour-card">
+        <img src="C:\Users\aayus\OneDrive\Pictures\saputara.jpg" alt="Saputara Hill Station">
+        <div class="tour-details">
+          <h3>Saputara Hill Station Tour</h3>
+          <p style="font-size: 18px;"><strong>Duration:</strong> 3 Nights / 4 Days</p>
+          </div>
+          <div class="tour-info">
+            <p style="font-size: 20px;"><strong>From ₹4,500</strong><br>Per Person</p>
+            <button class="btn" onclick="viewDetails('Saputara Hill Station')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+            <button class="btn" onclick="bookingRequest('Saputara Hill Station')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+        </div>
+        </div>
+      
+        <div class="tour-card">
+          <img src="C:\Users\aayus\OneDrive\Pictures\champaner.jpg" alt="Champaner">
+          <div class="tour-details">
+            <h3>Champaner Heritage Tour</h3>
+            <p style="font-size: 18px;"><strong>Duration:</strong> 1 Night / 2 Days</p>
+          </div>
+          <div class="tour-info">
+            <p style="font-size: 20px;"><strong>From ₹2,700</strong><br>Per Person</p>
+            <button class="btn" onclick="viewDetails('Champaner')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+        <button class="btn" onclick="bookingRequest('Champaner')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+    </div>
+        </div>
+      
+        <div class="tour-card">
+          <img src="C:\Users\aayus\OneDrive\Pictures\kutch.jpeg" alt="Kutch Tour">
+          <div class="tour-details">
+            <h3>Kutch Desert & Culture Tour</h3>
+            <p style="font-size: 18px;"><strong>Duration:</strong> 4 Nights / 5 Days</p>
+          </div>
+          <div class="tour-info">
+            <p style="font-size: 20px;"><strong>From ₹5,000</strong><br>Per Person</p>
+            <button class="btn" onclick="viewDetails('Kutch')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+            <button class="btn" onclick="bookingRequest('Kutch')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+        </div>
+        </div>
+      
+        <div class="tour-card">
+          <img src="C:\Users\aayus\OneDrive\Pictures\sou.jpg" alt="Statue of Unity">
+          <div class="tour-details">
+            <h3>Statue of Unity</h3>
+            <p style="font-size: 18px;"><strong>Duration:</strong> 2 Nights / 3 Days</p>
+          </div>
+          <div class="tour-info">
+            <p style="font-size: 20px;"><strong>From ₹3,000</strong><br>Per Person</p>
+            <button class="btn" onclick="viewDetails('Statue of Unity')"style="font-size: 20px; padding: 7px 17px; background-color: #4CAF50; color: white; border-radius: 5px;">View Details</button>
+        <button class="btn" onclick="bookingRequest('Statue of Unity')"style="font-size: 22px; padding: 7px 17px; background-color: #008CBA; color: white; border-radius: 5px;">Booking Request</button>
+    </div>
+        </div>
+
+<!-- About Us Modal -->
+<div id="about-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('about-modal')">&times;</span>
+        <h2>About Us</h2>
+        <p>We provide the best travel experiences across Gujarat.</p>
+    </div>
+</div>
+
+<!-- Places Modal -->
+<div id="places-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('places-modal')">&times;</span>
+        <h2>Explore Gujarat</h2>
+        <p>Visit famous places like the Statue of Unity, Gir National Park, and more!</p>
+    </div>
+</div>
+
+<div id="packages-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('packages-modal')">&times;</span>
+        <h2>Our Best Packages</h2>
+        <p>Explore our exclusive tour packages tailored for you.</p>
+    </div>
+</div>
+
+<!-- Why Choose Us -->
+<section class="center" id="about" style="background-color: #d4edda; padding: 20px; border-radius: 8px;">
+    <h2>Why Choose Us?</h2>
+    <p>We provide the best tour packages with experienced guides, affordable pricing, and 24/7 customer support. Explore Gujarat in a hassle-free and exciting way!</p>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="center" style="background-color: #d4edda; padding: 20px; border-radius: 8px; margin-top: 20px;">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+        <summary><strong>What is the best time to visit Gujarat?</strong></summary>
+        <p>The best time is from October to March.</p>
+    </details>
+    <details>
+        <summary><strong>Do you provide customized tours?</strong></summary>
+        <p>Yes! We can customize your trip as per your preferences.</p>
+    </details>
+    <details>
+        <summary><strong>What types of payment do you accept?</strong></summary>
+        <p>We accept credit cards, debit cards, and bank transfers.</p>
+    </details>
+    <details>
+        <summary><strong>Is travel insurance included in the package?</strong></summary>
+        <p>Travel insurance is not included but can be purchased separately.</p>
+    </details>
+    <details>
+        <summary><strong>What should I pack for my trip?</strong></summary>
+        <p>We recommend packing comfortable clothing, sunscreen, and any personal items you may need.</p>
+    </details>
+</section>
+
+<!-- Contact Us -->
+<section id="contact" class="center" style="background-color: #d4edda; padding: 20px; border-radius: 8px; margin-top: 20px;">
+    <h2>Contact Us</h2>
+    <p>Email: support@gujarattours.com</p>
+    <p>Phone: +91 99131 23792</p>
+    <p>Address: Ahmedabad, Gujarat, India</p>
+</section>
+
+<!-- Booking Form Modal -->
+<div id="booking-form-modal" class="modal" style="display:none;">
+    <!-- Content will be injected by JavaScript -->
+</div>
+</div>
+</div>
+
+</body>
+</html>
